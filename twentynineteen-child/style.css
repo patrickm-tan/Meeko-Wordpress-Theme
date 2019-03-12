@@ -1,0 +1,356 @@
+/*
+Theme Name: Twenty Nineteen Child Theme
+Theme URI: http://ccit356.firebird.sheridanc.on.ca/
+Description: CCT460
+Author: Patrick Tan
+Author URI: http://ccit356.firebird.sheridanc.on.ca/
+Template: twentynineteen
+Version: 0.1.0
+*/
+
+@import url("../twentynineteen/style.css");
+@import url("https://fonts.googleapis.com/css?family=Oxygen");
+
+/* 
+Notes 
+
+This is a school project and all content was used for educational purposes, all copyright is subject to the original owner
+
+- To allow SVG's for WordPress
+https://css-tricks.com/snippets/wordpress/allow-svg-through-wordpress-media-uploader/ 
+
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+- To add a class to body on a specific page 
+
+  add_filter('body_class', 'custom_body_class');
+function custom_body_class($classes) {
+    if (is_page(42))
+        $classes[] = 'home-header';
+    return $classes;
+}
+
+For the most part, the site is pretty responsive. I got the main layout to be responsive but due to time constraints, I didnt properly align content and etc..)
+
+CSS selectors may not seem consistent, some were manually done and some were copied via browser-inspection (I got lazy..)
+
+All graphics were supplied from undraw.com and flaticon.com - content was done by me (Expo Projects, bump/charades/dentistryonu)
+
+This is of course a fictious site, I did not upload the entirety of my projects. Can read more into them via my GitHub (If i updated the markdown).
+*/
+
+/* Flex Container to reorder the layout of website */
+* {
+  font-family: "Oxygen", sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  height: 100vh;
+}
+h2,
+h3 {
+  font-size: 4vh;
+}
+
+p {
+  font-size: 2.5vh;
+}
+
+/* Left Side-bar */
+#masthead {
+  flex: 1;
+  padding: 0;
+  background: url("http://ccit356.firebird.sheridanc.on.ca/wp-content/uploads/pattern.jpg");
+  color: #fff;
+  overflow: hidden;
+}
+
+#masthead > .site-branding-container {
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  padding-right: 15px;
+  text-align: right;
+}
+
+#masthead > .site-branding-container > .site-branding {
+  padding: 5px;
+  margin: 0;
+}
+
+#masthead > .site-branding-container > .site-branding > .site-logo {
+  right: 0;
+  position: unset;
+  padding-top: 50px;
+  padding-bottom: 25px;
+  text-align: right;
+}
+
+.site-logo .custom-logo-link {
+  border-radius: 0;
+}
+
+#masthead > .site-branding-container > .site-branding > .site-title {
+  font-weight: 900;
+  font-size: 4vh;
+}
+
+.site-title a:link,
+.site-title a:visited,
+.main-navigation ul.main-menu > li > a,
+#masthead
+  > .site-branding-container
+  > .site-branding
+  > .social-navigation
+  > .menu-socials-container
+  > #menu-socials
+  > li
+  > a
+  > svg {
+  color: #fff;
+}
+
+#masthead
+  > .site-branding-container
+  > .site-branding
+  > .social-navigation
+  > .menu-socials-container
+  > #menu-socials
+  > li
+  > a
+  > svg:hover,
+.main-navigation ul.main-menu > li > a:hover,
+.site-title a:hover {
+  color: #f6c934;
+}
+
+.main-navigation {
+  margin-top: 2.5rem;
+}
+
+.main-navigation ul.main-menu > li {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.main-navigation .main-menu > li > a {
+  margin: 0;
+}
+
+.site-logo .custom-logo-link {
+  display: inline-block;
+  width: 164px;
+  height: 164px;
+}
+
+#masthead > .site-branding-container > .site-branding > .site-navigation,
+.main-navigation .main-menu > li {
+  display: block;
+}
+
+.social-navigation ul.social-links-menu {
+  position: absolute;
+  right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  #masthead .site-branding-container > .site-branding > .site-logo,
+  #masthead
+    .site-branding-container
+    > .site-branding
+    > .social-navigation
+    > .menu-socials-container {
+    display: none;
+  }
+
+  #masthead {
+    flex: 4;
+    overflow: unset;
+  }
+  #content {
+    flex: 1;
+    overflow: unset !important;
+  }
+  .entry .entry-content .wp-block-columns,
+  .wp-block-column {
+    flex-wrap: wrap;
+  }
+}
+
+/* Right Side content*/
+#content {
+  flex: 5;
+  background-color: #fff;
+  color: #36383a;
+  overflow: auto;
+}
+
+.home-header .entry-header {
+  background-color: #fff;
+  padding: 0;
+}
+
+h1:not(.site-title):before,
+h2:before,
+.entry .entry-title:before {
+  content: none;
+}
+
+.entry .entry-content .wp-block-separator,
+.entry .entry-content hr {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+  padding: 0;
+}
+
+#content > #primary > #main > #post-42 > .entry-content > figure {
+  margin: 0;
+  padding-bottom: 25px;
+}
+
+#content > #primary > #main > #post-42 > .entry-content > div.wp-block-cover {
+  margin-top: 0;
+  max-height: 100vh;
+  height: 100vh;
+}
+
+#content > #primary > #main > article > .entry-content > h2.contact-us {
+  background: url("http://ccit356.firebird.sheridanc.on.ca/wp-content/uploads/undraw_conversation_h12g.svg");
+  padding: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#content > #primary > #main > article > .entry-content > h2 > a {
+  color: #252627;
+  text-decoration: none;
+  font-size: 8vh;
+}
+
+#content > #primary > #main > article > .entry-content > h2 > a:hover {
+  color: #f6c934;
+}
+
+.key-words {
+  color: #f6c934;
+}
+
+#content > #primary > #main > #post-42 > .entry-footer {
+  max-width: 100%;
+}
+
+.entry .entry-content .wp-block-columns[class*="has-"] > * {
+  margin-right: 4rem;
+}
+
+#post-42
+  > div
+  > div.wp-block-columns.alignwide.has-3-columns
+  > .wp-block-column
+  > figure
+  > a
+  > img {
+  height: 305px;
+  max-height: 305px;
+}
+
+.entry-header {
+  background-color: #f6c934;
+  color: #fff;
+  padding: 150px;
+  margin: 0 !important;
+}
+
+.entry .entry-content .wp-block-image.profile-picture {
+  text-align: center;
+}
+
+.entry .entry-content .wp-block-image.wp-block-image.profile-picture img {
+  display: unset;
+  border-radius: 100%;
+}
+
+.entry .entry-content .wp-block-quote:not(.is-large),
+.entry .entry-content .wp-block-quote:not(.is-style-large) {
+  border-color: #f6c934;
+}
+
+.contact-email {
+  font: 95% Arial, Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  border-radius: 5%;
+  background: #f7f7f7;
+}
+
+.contact-email input[type="text"],
+.contact-email input[type="email"],
+.contact-email textarea,
+.contact-email select {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 3%;
+  color: #555;
+  font: 95% Arial, Helvetica, sans-serif;
+}
+.contact-email input[type="text"]:focus,
+.contact-email input[type="email"]:focus,
+.contact-email textarea:focus,
+.contact-email select:focus {
+  box-shadow: 0 0 5px #f6c934;
+  padding: 3%;
+  border: 1px solid #f6c934;
+}
+
+.contact-email input[type="submit"],
+.contact-email input[type="button"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  background: #f6c934;
+  border-bottom: 2px solid #f6c934;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #fff;
+}
+.contact-email input[type="submit"]:hover,
+.contact-email input[type="button"]:hover {
+  background: #f0c741;
+}
+/* Footer */
+
+#colophon {
+  margin: 0;
+  background-color: #252627;
+}
+
+#colophon > .site-info {
+  margin: calc(2 * 1rem) 1rem;
+  text-align: right;
+}
