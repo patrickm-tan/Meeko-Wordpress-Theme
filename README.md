@@ -37,4 +37,18 @@ This is built off WordPress 5.1, using Firebird server services.
 
 ## Final Product
 
-![sidebar with large landing photo](https://raw.githubusercontent.com/patrickm-tan/meekoWP/master/Resources/Landing-page.png "Landing Page")
+### Landing Page
+
+![sidebar with large landing photo](https://raw.githubusercontent.com/patrickm-tan/meekoWP/master/Resources/expo-optimized.gif "Landing Page")
+
+### Services
+
+![sidebar with list of services](https://raw.githubusercontent.com/patrickm-tan/meekoWP/master/Resources/service-optimized.gif "Services Page")
+
+### Expo
+
+![sidebar with featured projects](https://raw.githubusercontent.com/patrickm-tan/meekoWP/master/Resources/expo-optimized.gif "Expo Page")
+
+## Final Remarks
+
+[ Final Remarks will go here ]
