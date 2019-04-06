@@ -343,6 +343,11 @@ h2:before,
 .contact-email input[type="button"]:hover {
   background: #f0c741;
 }
+
+.entry .entry-content a {
+  text-decoration: none;
+}
+
 /* Footer */
 
 #colophon {
